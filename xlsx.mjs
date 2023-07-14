@@ -25891,7 +25891,15 @@ function make_json_row(sheet, r, R, cols, header, hdr, dense, o) {
 			if(hdr[C] != null) { row[hdr[C]] = defval; }
 			continue;
 		}
-		var v = val.w == undefined ? val.v : val.w;
+		var v;
+		if (val.w)
+		{
+			v = val.w;
+		}
+		else
+		{
+			v  = val.v;
+		}	
 		switch(val.t){
 			case 'z': if(v == null) break; continue;
 			case 'e': v = (v == 0 ? null : void 0); break;
