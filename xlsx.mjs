@@ -26007,7 +26007,8 @@ function make_json_row(sheet/*:Worksheet*/, r/*:Range*/, R/*:number*/, cols/*:Ar
 			if(hdr[C] != null) { row[hdr[C]] = defval; }
 			continue;
 		}
-		var v = val.v;
+		//var v = val.v;
+		var v = val.w == undefined ? value.v : value.w;
 		switch(val.t){
 			case 'z': if(v == null) break; continue;
 			case 'e': v = (v == 0 ? null : void 0); break;
